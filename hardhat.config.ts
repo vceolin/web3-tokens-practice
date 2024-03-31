@@ -1,12 +1,12 @@
 import { HardhatUserConfig } from 'hardhat/config'
 import '@nomicfoundation/hardhat-toolbox'
-import '@nomiclabs/hardhat-waffle'
+import '@nomicfoundation/hardhat-chai-matchers'
 import { privateKey } from './sepolia.private'
 
 const config: HardhatUserConfig = {
   networks: {
     sepolia: {
-      url: 'https://sepolia.com', // Sepolia testnet RPC URL
+      url: 'https://sepolia.drpc.org', // Sepolia testnet RPC URL
       accounts: [privateKey]
     }
   },
