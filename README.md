@@ -1,13 +1,54 @@
-# Sample Hardhat Project
+# Skylean Ether Network Token
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+## Overview
 
-Try running some of the following tasks:
+This project was made to learn more about the Ether network. Here we:
+
+- deploy an ERC20 token,
+- deploy an ERC721 token
+- mint an NFT for the deployed ERC721 token
+
+## Getting started
+
+1. Stall dependencies
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
+yarn start
 ```
+
+2. Compile Contracts: Run npx hardhat compile to compile the smart contracts.
+
+```shell
+npx hardhat
+```
+
+3. Add your private key
+   Create a `sepolia.private.ts` file in the root folder with this content:
+
+```typescript
+export const privateKey = 'YOUR_PRIVATE_KEY'
+```
+
+## Creating Tokens
+
+To create both the ERC20 and the ERC721 tokens, run the following command:
+
+```shell
+npx hardhat run scripts/deploy.js --network sepolia
+```
+
+## Minting NFTs
+
+To mint an ERC721 NFT, run the following command:
+
+```shell
+npx hardhat run scripts/mint.js --network sepolia
+This command will mint a new NFT using the deployed contract on the Sepolia testnet.
+```
+
+> **_NOTE:_** You will need to manually change the constants `contractAddress`,
+> `tokenId` and `tokenURI` to the desired output on `scripts/mint.js`
+
+---
+
+Made with ❤️ by [Your Name]
