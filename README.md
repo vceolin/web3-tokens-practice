@@ -42,7 +42,7 @@ npx hardhat run scripts/deploy.js --network sepolia
 To mint an ERC721 NFT, run the following command:
 
 ```shell
-npx hardhat run scripts/mint.js --network sepolia
+npx hardhat run scripts/mint.ts --network sepolia
 This command will mint a new NFT using the deployed contract on the Sepolia testnet.
 ```
 

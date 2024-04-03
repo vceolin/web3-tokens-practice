@@ -7,21 +7,17 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract SkyleanNFT is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
-    constructor()
-        ERC721("SkyleanNFT", "SKLNn")
-        Ownable(msg.sender)
-    {}
+    uint256 private _tokenIdCounter;
 
-    function safeMint(address to, uint256 tokenId, string memory uri)
-        public
-        onlyOwner
-    {
-        _safeMint(to, tokenId);
-        _setTokenURI(tokenId, uri);
+    constructor() ERC721("SkyleanNFT", "SKLNn") Ownable(msg.sender) {}
+
+    function safeMint(address to, string memory uri) public onlyOwner {
+        _safeMint(to, _tokenIdCounter);
+        _setTokenURI(_tokenIdCounter, uri);
+        _tokenIdCounter++;
     }
 
     // The following functions are overrides required by Solidity.
-
     function tokenURI(uint256 tokenId)
         public
         view
