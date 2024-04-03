@@ -51,4 +51,4 @@ This command will mint a new NFT using the deployed contract on the Sepolia test
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by vceolin
